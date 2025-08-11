@@ -35,6 +35,23 @@ function App() {
           <h3 className='name taki'>Taki Tachibana</h3>
           <h3 className='name mitsuha'>Mitsuha Miyamizu</h3> 
         </section>
+
+        {/* nova Section de informaçao */}
+        <section className='movie-info'>
+          <div className='details'>
+            <p>2016 • Roman/Fantasy • 1h 52min</p>
+            <p>96% das pessoas gostaram</p>
+          </div>
+          <div className='title'>
+            <h2>君の名は。</h2>
+            <h3>Kimi no Na wa</h3>
+            <p>Your Name</p>
+          </div>
+          <div className='actions'>
+            <button className='like'>👍</button>
+            <button className='dislike'>👎</button>
+          </div>
+        </section>
       </main>
     </div>
   );
