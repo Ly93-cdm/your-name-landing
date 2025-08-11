@@ -1,17 +1,21 @@
 import React from 'react'
+import bgImage  from './assets/kimi-no-na-wa.png';
 import './App.css'
 
 function App() {
   return (
     <div className='App'>
+      {/* background */}
       <div className='background'></div>
+
+      {/* Header fixo */}
       <header className='header'>
         {/* Logo/ titulo */}
         <div className='logo'>
           <h1>Movie</h1>
           <h1>Review</h1>
         </div>
-        {/* Navegacion */}
+    
         <div className='navbar-wrap'>
           <nav className='navbar'>
             <ul>
@@ -23,9 +27,15 @@ function App() {
           </nav>
         </div>
       </header>
-      <body>
-        
-      </body>
+
+      {/* conteudo principal */}
+      <main className='main'>
+        <section className='character'>
+          <img src={bgImage} alt="Taki and Mitsuha" />
+          <h3 className='name taki'>Taki Tachibana</h3>
+          <h3 className='name mitsuha'>Mitsuha Miyamizu</h3> 
+        </section>
+      </main>
     </div>
   );
 }
