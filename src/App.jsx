@@ -37,19 +37,22 @@ function App() {
         </section>
 
         {/* nova Section de informaçao */}
+        {/* talvez cria uma nova div aqui so pra fazer o background da referencia */}
         <section className='movie-info'>
-          <div className='details'>
-            <p>2016 • Roman/Fantasy • 1h 52min</p>
-            <p>96% das pessoas gostaram</p>
-          </div>
-          <div className='title'>
-            <h2>君の名は。</h2>
-            <h3>Kimi no Na wa</h3>
-            <p>Your Name</p>
-          </div>
-          <div className='actions'>
-            <button className='like'>👍</button>
-            <button className='dislike'>👎</button>
+          <div className='movie-background'>
+              <div className='details'>
+              <p>2016 • Roman/Fantasy • 1h 52min</p>
+              <p>96% das pessoas gostaram</p>
+            </div>
+            <div className='title'>
+              <h2>君の名は。</h2>
+              <h3>Kimi no Na wa</h3>
+              <p>Your Name</p>
+            </div>
+            <div className='actions'>
+              <button className='like'>👍</button>
+              <button className='dislike'>👎</button>
+            </div>
           </div>
         </section>
       </main>
