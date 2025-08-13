@@ -1,5 +1,6 @@
 import React from 'react'
 import bgImage  from './assets/kimi-no-na-wa.png';
+import bgPicture from './assets/character.png';
 import './App.css'
 
 function App() {
@@ -36,13 +37,12 @@ function App() {
           <h3 className='name mitsuha'>Mitsuha Miyamizu</h3> 
         </section>
 
-        {/* nova Section de informaçao */}
-        {/* talvez cria uma nova div aqui so pra fazer o background da referencia */}
+        {/* Seção de informaçao */}
         <section className='movie-info'>
           <div className='movie-background'>
               <div className='details'>
               <p>2016 • Roman/Fantasy • 1h 52min</p>
-              <p>96% das pessoas gostaram</p>
+              <p>96% of people liked it</p>
             </div>
             <div className='title'>
               <h2>君の名は。</h2>
@@ -53,6 +53,27 @@ function App() {
               <button className='like'>👍</button>
               <button className='dislike'>👎</button>
             </div>
+          </div>
+        </section>
+
+        {/* Seção de Resumo */}
+        <section className='film-summary'>
+          <div className='summary-content'>
+            <img src={bgPicture} alt="movie poster" srcset="" />
+
+            <div className='text-block'>
+              <p>Your Name. is a Japanese anime film released in 2016, <br/>
+                written and directed by Makoto Shinkai, produced by CoMix Wave Films. <br/>
+                The story revolves around two teenagers who inexplicably swap bodies, <br/>
+                creating a deep connection as they try to understand this supernatural phenomenon.</p>
+            </div>
+            <nav className='summary-nav'>
+              <ul>
+                <li><a href="">Summary</a></li>
+                <li><a href="">Critics</a></li>
+                <li><a href="">Snippets</a></li>
+              </ul>
+            </nav>
           </div>
         </section>
       </main>
