@@ -382,3 +382,42 @@ body, html, #root {
 .summary-nav a:hover {
   color: #005bb5;
 }
+
+.film-carousel {
+  padding: 20px;
+}
+
+.carousel-title {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.carousel {
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-track img {
+  height: 150px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05);
+}
+
+.credit {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 5px;
+  text-align: center;
+}

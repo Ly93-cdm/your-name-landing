@@ -4,6 +4,20 @@ import bgPicture from './assets/character.png';
 import './App.css'
 
 function App() {
+   const carouselImages = [
+    {
+      url: "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png",
+      credit: "© 2016 CoMix Wave Films / Toho Co., Ltd."
+    },
+    {
+      url: "https://m.media-amazon.com/images/I/81ZcD1UpDHL._AC_UF1000,1000_QL80_.jpg",
+      credit: "© 2016 CoMix Wave Films / Toho Co., Ltd."
+    },
+    {
+      url: "https://cdn.myanimelist.net/images/anime/5/87048.jpg",
+      credit: "© 2016 CoMix Wave Films / Toho Co., Ltd."
+    }
+  ];
   return (
     <div className='App'>
       {/* background */}
@@ -76,6 +90,20 @@ function App() {
             </nav>
           </div>
         </section>
+        <section className='film-carousel'>
+          <h2 className='carousel-title'>Scenas</h2>
+          <div className='carousel'>
+            <div className='carousel-track'>
+               {carouselImages.map((img, index) => (
+              <div key={index} className="carousel-item">
+                <img src={img.url} alt={`Scene ${index + 1}`} />
+                <p className="credit">{img.credit}</p>
+              </div>
+            ))}
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
   );
