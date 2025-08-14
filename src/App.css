@@ -205,7 +205,7 @@ body, html, #root {
 
 .movie-info {
   padding: 6.5rem;
-  width: 100%;
+  width: 75%;
   height: auto;
   animation: fade-up 1.5s ease-in-out forwards;
   transition: all 0.3s ease-in-out;
@@ -314,9 +314,9 @@ body, html, #root {
   }
 }
 
-.film-summary {
+.movie-summary {
   padding: 3rem;
-  width: 100%;
+  width: 75%;
   height: auto;
 
   display: flex;
@@ -383,8 +383,10 @@ body, html, #root {
   color: #005bb5;
 }
 
-.film-carousel {
+.movie-carousel {
   padding: 20px;
+  width: 75%;
+  height: auto;
 }
 
 .carousel-title {
@@ -394,8 +396,10 @@ body, html, #root {
 }
 
 .carousel {
-  overflow: auto;
-  scroll-behavior: smooth;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
 }
 
 .carousel-track {
@@ -404,7 +408,9 @@ body, html, #root {
 }
 
 .carousel-track img {
-  height: 150px;
+  width: 300px;              
+  height: 250px;             
+  object-fit: cover;         
   border-radius: 10px;
   flex-shrink: 0;
   cursor: pointer;
@@ -415,9 +421,10 @@ body, html, #root {
   transform: scale(1.05);
 }
 
-.credit {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 5px;
-  text-align: center;
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
 }

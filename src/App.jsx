@@ -1,23 +1,13 @@
 import React from 'react'
 import bgImage  from './assets/kimi-no-na-wa.png';
 import bgPicture from './assets/character.png';
+import img1 from './assets/img/img1.jpg';
+import img2 from './assets/img/img2.jpg';
+import img3 from './assets/img/img3.jpg';
+import img4 from './assets/img/img4.png';
 import './App.css'
 
 function App() {
-   const carouselImages = [
-    {
-      url: "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png",
-      credit: "© 2016 CoMix Wave Films / Toho Co., Ltd."
-    },
-    {
-      url: "https://m.media-amazon.com/images/I/81ZcD1UpDHL._AC_UF1000,1000_QL80_.jpg",
-      credit: "© 2016 CoMix Wave Films / Toho Co., Ltd."
-    },
-    {
-      url: "https://cdn.myanimelist.net/images/anime/5/87048.jpg",
-      credit: "© 2016 CoMix Wave Films / Toho Co., Ltd."
-    }
-  ];
   return (
     <div className='App'>
       {/* background */}
@@ -71,7 +61,7 @@ function App() {
         </section>
 
         {/* Seção de Resumo */}
-        <section className='film-summary'>
+        <section className='movie-summary'>
           <div className='summary-content'>
             <img src={bgPicture} alt="movie poster" srcset="" />
 
@@ -90,16 +80,14 @@ function App() {
             </nav>
           </div>
         </section>
-        <section className='film-carousel'>
+        <section className='movie-carousel'>
           <h2 className='carousel-title'>Scenas</h2>
           <div className='carousel'>
             <div className='carousel-track'>
-               {carouselImages.map((img, index) => (
-              <div key={index} className="carousel-item">
-                <img src={img.url} alt={`Scene ${index + 1}`} />
-                <p className="credit">{img.credit}</p>
-              </div>
-            ))}
+              <img src={img1} alt="Scene 1" />
+              <img src={img2} alt="Scene 2" />
+              <img src={img3} alt="Scene 3" />
+              <img src={img4} alt="Scene 4" />
             </div>
           </div>
         </section>
