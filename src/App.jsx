@@ -91,7 +91,15 @@ function App() {
             </div>
           </div>
         </section>
-
+        <section className='moral-section'>
+          <h2>Moral Story</h2>
+          <p> The memory of humans is indeed limited.<br/>
+           However, what is embedded in the heart will never be consumed by time.<br/> 
+           No matter how long, no matter how far, and no matter how complicated the storyline.<br/> 
+           Sincerity in the heart will always find a place to return.
+           </p>
+           <p class="credit">— Himawari, 2022</p>
+        </section>
       </main>
     </div>
   );

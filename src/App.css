@@ -347,12 +347,13 @@ body, html, #root {
   justify-content: flex-end;
   align-items: center;
   border: 1px solid white;
-  padding: 0.6rem 1.2rem;
+  /* padding: 0.6rem 1.2rem; */
   border-radius: 20px;
 }
 
 .text-block p {
-  line-height: 1.6;
+  font-family: 'Times New Roman', serif;
+  font-size: 1.2em;
 }
 
 .summary-nav {
@@ -424,7 +425,33 @@ body, html, #root {
 .carousel::-webkit-scrollbar {
   display: none;
 }
+
 .carousel {
   -ms-overflow-style: none;  
   scrollbar-width: none;     
+}
+
+.moral-section {
+  padding: 40px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+.moral-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-family: Georgia, serif;
+}
+
+.moral-section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  font-family: 'Times New Roman', serif;
+}
+
+.moral-section .credit {
+  margin-top: 20px;
+  font-style: italic;
 }
