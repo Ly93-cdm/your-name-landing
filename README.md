@@ -36,18 +36,17 @@ Projeto desenvolvido com **React** que apresenta uma interface interativa inspir
    ```bash
     cd your-name-landing
 
-3.Instale as dependências:
-    ```bash
-    npm install
+3. Instale as dependências:
+   ```bash
+   npm install
 
 4. Inicie o projeto:
     ```bash
     npm start
 
 5.Acesse no navegador:
-```Code
-    http://localhost:3000
-
+   http://localhost:3000
+   
 ## 📖 Sobre o Filme  
 **Your Name** é um filme de animação japonês lançado em 2016, escrito e dirigido por **Makoto Shinkai**.  
 A história gira em torno de dois adolescentes que misteriosamente trocam de corpo, criando uma conexão profunda enquanto tentam entender esse fenômeno sobrenatural.
