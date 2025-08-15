@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState,  useRef  } from 'react';
+import { AiOutlineLike, AiOutlineDislike, } from "react-icons/ai";
+import { FaBars, FaTimes } from 'react-icons/fa';
 import bgImage  from './assets/kimi-no-na-wa.png';
 import bgPicture from './assets/character.png';
 import img1 from './assets/img/img1.jpg';
@@ -8,6 +10,17 @@ import img4 from './assets/img/img4.png';
 import './App.css'
 
 function App() {
+  const trackRef = useRef(null);
+  const [open, setOpen] = useState(false);
+
+  const scrollLeft = () => {
+    trackRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+  };
+
+  const scrollRight = () => {
+    trackRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+  };
+
   return (
     <div className='App'>
       {/* background */}
@@ -21,13 +34,18 @@ function App() {
           <h1>Review</h1>
         </div>
     
+        {/* navbar */}
         <div className='navbar-wrap'>
-          <nav className='navbar'>
+          <div className='hamburger' onClick={() => setOpen(!open)}>
+            {open ? <FaTimes /> : <FaBars />}
+          </div>
+
+          <nav className={`navbar ${open ? 'open' : ''}`}>
             <ul>
-              <a href='#'>Description</a>
-              <a href='#'>Playlist</a>
-              <a href='#'>Profile</a>
-              <a href='#'>Next movie</a>
+              <li><a href='#'>Description</a></li>
+              <li><a href='#'>Playlist</a></li>
+              <li><a href='#'>Profile</a></li>
+              <li><a href='#'>Next movie</a></li>
             </ul>
           </nav>
         </div>
@@ -54,8 +72,8 @@ function App() {
               <p>Your Name</p>
             </div>
             <div className='actions'>
-              <button className='like'>👍</button>
-              <button className='dislike'>👎</button>
+              <button className='like'><AiOutlineLike size={24}/></button>
+              <button className='dislike'><AiOutlineDislike size={24} /></button>
             </div>
           </div>
         </section>
@@ -80,27 +98,34 @@ function App() {
             </nav>
           </div>
         </section>
+
+        {/* fotos carrossel */}
         <section className='movie-carousel'>
           <h2 className='carousel-title'>Scenas</h2>
-          <div className='carousel'>
-            <div className='carousel-track'>
-              <img src={img1} alt="Scene 1" />
-              <img src={img2} alt="Scene 2" />
-              <img src={img3} alt="Scene 3" />
-              <img src={img4} alt="Scene 4" />
-            </div>
+          <div className='carousel-wrapper'>
+            <button className='carousel-btn left' onClick={scrollLeft}>‹</button>
+            <div className='carousel' ref={trackRef}>
+              <div className='carousel-track' >
+                <img src={img1} alt="Scene 1" />
+                <img src={img2} alt="Scene 2" />
+                <img src={img3} alt="Scene 3" />
+                <img src={img4} alt="Scene 4" />
+              </div>
+            </div> 
+            <button className='carousel-btn right' onClick={scrollRight}>›</button>
           </div>
         </section>
-        <section className='moral-section'>
-          <h2>Moral Story</h2>
-          <p> The memory of humans is indeed limited.<br/>
-           However, what is embedded in the heart will never be consumed by time.<br/> 
-           No matter how long, no matter how far, and no matter how complicated the storyline.<br/> 
-           Sincerity in the heart will always find a place to return.
-           </p>
-           <p class="credit">— Himawari, 2022</p>
-        </section>
+
       </main>
+      <footer className='moral-section'>
+        <h2>Moral Story</h2>
+        <p> The memory of humans is indeed limited.<br/>
+          However, what is embedded in the heart will never be consumed by time.<br/> 
+          No matter how long, no matter how far, and no matter how complicated the storyline.<br/> 
+          Sincerity in the heart will always find a place to return.
+          </p>
+          <p class="credit">— Himawari, 2022</p>
+      </footer>
     </div>
   );
 }

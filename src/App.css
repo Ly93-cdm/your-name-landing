@@ -73,7 +73,6 @@ body, html, #root {
   position: relative;
   width: 50%;
   padding: 20px 40px;
-  
 }
 
 .navbar-wrap::before {
@@ -83,6 +82,13 @@ body, html, #root {
   border-radius: 999px;
   background: transparent;
   pointer-events: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 .navbar ul {
@@ -182,27 +188,6 @@ body, html, #root {
   }
 }
 
-
-@media (max-width: 600px) {
-  .main {
-    margin-top: 300px; /* Adjusted for smaller screens */
-    padding: 1rem;
-  }
-
-  .name {
-    font-size: 1rem;
-    padding: 6px 12px;
-  }
-
-  .name.taki {
-    left: 10px;
-  }
-
-  .name.mitsuha {
-    right: 10px;
-  }
-}
-
 .movie-info {
   padding: 6.5rem;
   width: 75%;
@@ -271,47 +256,24 @@ body, html, #root {
   padding: 10px;
 }
 
-.actions button {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
+.like, .dislike {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
+  background: transparent;
+  border: 2px solid white;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: transform 0.2s, background 0.3s;
 }
 
-.actions button:hover {
-  background: rgba(255, 255, 255, 0.2)
+.like:hover {
+  background: rgba(0, 255, 127, 0.2);
+  transform: scale(1.1);
 }
 
-@media (max-width: 600px) {
-  .movie-info {
-    padding: 0 1rem;
-  }
-
-  .title h2 {
-    font-size: 2rem;
-  }
-
-  .title h3 {
-    font-size: 1.4rem;
-  }
-
-  .title p {
-    font-size: 1rem;
-  }
-
-  .details {
-    font-size: 0.9rem;
-  }
-
-  .actions button {
-    font-size: 1.2rem;
-    padding: 0.4rem 0.8rem;
-  }
+.dislike:hover {
+  background: rgba(255, 0, 0, 0.2);
+  transform: scale(1.1);
 }
 
 .movie-summary {
@@ -397,15 +359,23 @@ body, html, #root {
 }
 
 .carousel {
+  display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   white-space: nowrap;
   padding-bottom: 10px;
+}
+
+.carousel-wrapper button {
+  display: none;
 }
 
 .carousel-track {
   display: flex;
   gap: 10px;
+  min-width: max-content;
 }
 
 .carousel-track img {
@@ -415,6 +385,7 @@ body, html, #root {
   border-radius: 10px;
   flex-shrink: 0;
   cursor: pointer;
+  scroll-snap-align: start;
   transition: transform 0.3s ease;
 }
 
@@ -432,11 +403,16 @@ body, html, #root {
 }
 
 .moral-section {
+  width: 100%;
+  height: auto;
+  margin-top: 4rem;;
   padding: 40px;
-  border-radius: 12px;
-  margin: 40px auto;
-  max-width: 700px;
   text-align: center;
+  border-radius: 12px;
+  margin: 40px 60px;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
 }
 
 .moral-section h2 {
@@ -454,4 +430,183 @@ body, html, #root {
 .moral-section .credit {
   margin-top: 20px;
   font-style: italic;
+}
+
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+    margin-left: 5%;
+  }
+
+  .navbar-wrap {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .navbar.open {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-wrap: column;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .character {
+    height: 300px;
+  }
+
+  .character img {
+    z-index: 0;
+  }
+
+  .name {
+    font-size: 1rem;
+    border: none;
+  }
+
+  .name.taki {
+    left: 10px;
+  }
+
+  .name.mitsuha {
+    right: 10px;
+  }
+
+  .movie-info {
+    padding: 0 1rem;
+    width: 100%;
+    padding: 2rem 1rem ;
+  }
+
+  .movie-background {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details {
+    padding: 0;
+  }
+
+  .title {
+    padding: 0;
+  }
+
+  .title h2 {
+    font-size: 2rem;
+  }
+
+  .title h3 {
+    font-size: 1.4rem;
+  }
+
+  .title p {
+    font-size: 1rem;
+  }
+
+  .details {
+    font-size: 0.9rem;
+  }
+
+  .actions button {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .movie-summary {
+    padding: 0;
+    width: 100%;
+  }
+
+  .summary-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-block {
+    margin-left: 0;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .movie-carousel {
+    width: 100%;
+    padding: 10px;
+    overflow: visible;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 270px;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .carousel-btn {
+    display: block;
+    background-color: radial-gradient( rgba(255, 255, 255, 0.1), transparent 70%);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+
+  .carousel-btn.left {
+    left: 10px;
+  }
+
+  .carousel-btn.right {
+    right: 0px;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 10px;
+    min-width: max-content;
+  }
+
+  .moral-section {
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+    font-size: 1rem;
+  }
 }
