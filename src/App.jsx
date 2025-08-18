@@ -12,9 +12,11 @@ import './App.css'
 function App() {
   // menu
   const [open, setOpen] = useState(false); 
-  const trackRef = useRef(null);
-
+  
   // carousel
+  const trackRef = useRef(null);
+  const intervalRef = useRef(null);
+
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -22,7 +24,8 @@ function App() {
     const imgs = track.querySelectorAll("img");
     let index = 0;
 
-    const interval = setInterval(() => {
+    const startCarousel = () => {
+      intervalRef.current = setInterval(() => {
       index = (index + 1) % imgs.length;
       const scrollX = imgs[index].offsetLeft;
 
@@ -31,9 +34,34 @@ function App() {
         behavior: "smooth",
       });
     }, 3000); 
+    };
 
-    return () => clearInterval(interval);
+    startCarousel();
+
+    return () => clearInterval(intervalRef.current);
   }, []);
+
+  const pauseCarousel = () => {
+    clearInterval(intervalRef.current);
+  };
+
+  const resumeCarousel = () => {
+    const track = trackRef.current;
+    if(!track) return;
+
+    const imgs = track.querySelectorAll("img")
+    let index = 0;
+
+    intervalRef.current = setInterval(() => {
+      index = (index +1) % imgs.length;
+      const scrollX = imgs[index].offsetLeft;
+
+       track.scrollTo({
+        left: scrollX,
+        behavior: "smooth",
+      });
+    }, 3000);
+  };
 
   return (
     <div className='App'>
@@ -86,8 +114,8 @@ function App() {
               <p>Your Name</p>
             </div>
             <div className='actions'>
-              <button className='like'><AiOutlineLike size={24}/></button>
-              <button className='dislike'><AiOutlineDislike size={24} /></button>
+              <button className='like' aria-label="Like"><AiOutlineLike size={24}/></button>
+              <button className='dislike' aria-label="Dislike"><AiOutlineDislike size={24} /></button>
             </div>
           </div>
         </section>
@@ -95,7 +123,7 @@ function App() {
         {/* Seção de Resumo */}
         <section className='movie-summary'>
           <div className='summary-content'>
-            <img src={bgPicture} alt="movie poster" srcset="" />
+            <img src={bgPicture} alt="movie poster"/>
 
             <div className='text-block'>
               <p>Your Name. is a Japanese anime film released in 2016, <br/>
@@ -117,7 +145,8 @@ function App() {
         <section className='movie-carousel'>
           <h2 className='carousel-title'>Scenas</h2>
           <div className='carousel-wrapper'>
-            <div className='carousel' ref={trackRef}>
+            <div className='carousel' ref={trackRef} onMouseEnter={pauseCarousel}
+  onMouseLeave={resumeCarousel}>
               <div className='carousel-track' >
                 <img src={img1} alt="Scene 1" />
                 <img src={img2} alt="Scene 2" />
@@ -131,14 +160,16 @@ function App() {
 
       <footer className='moral-section'>
         <h2>Moral Story</h2>
-        <p> The memory of humans is indeed limited.<br/>
+        <blockquote>
+          <p> The memory of humans is indeed limited.<br/>
           However, what is embedded in the heart will never be consumed by time.<br/> 
           No matter how long, no matter how far, and no matter how complicated the storyline.<br/> 
           Sincerity in the heart will always find a place to return.
           </p>
-          <p class="credit">— Himawari, 2022</p>
+          <cite>— Himawari, 2022</cite>
+        </blockquote>
       </footer>
-      
+
     </div>
   );
 }

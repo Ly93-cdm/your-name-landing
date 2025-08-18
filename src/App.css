@@ -427,12 +427,6 @@ body, html, #root {
   font-family: 'Times New Roman', serif;
 }
 
-.moral-section .credit {
-  margin-top: 20px;
-  font-style: italic;
-}
-
-
 @media (max-width: 768px) {
   .logo {
     font-size: 1.5rem;
