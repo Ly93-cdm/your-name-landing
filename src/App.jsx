@@ -1,7 +1,7 @@
 import React, { useState, useEffect,  useRef  } from 'react';
 import { AiOutlineLike, AiOutlineDislike, } from "react-icons/ai";
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import bgImage  from './assets/kimi-no-na-wa.png';
 import bgPicture from './assets/character.png';
 import img1 from './assets/img/img1.jpg';
@@ -11,6 +11,10 @@ import img4 from './assets/img/img4.png';
 import './App.css'
 
 function App() {
+
+  // summary-nav content
+  const [activeTab, setActiveTab] = useState("summary");
+
   // menu
   const [open, setOpen] = useState(false); 
   
@@ -164,18 +168,73 @@ function App() {
             <img src={bgPicture} alt="movie poster"/>
 
             <div className='text-block'>
-              <p>Your Name. is a Japanese anime film released in 2016, <br/>
-                written and directed by Makoto Shinkai, produced by CoMix Wave Films. <br/>
-                The story revolves around two teenagers who inexplicably swap bodies, <br/>
-                creating a deep connection as they try to understand this supernatural phenomenon.</p>
+             <AnimatePresence mode="wait">
+                {activeTab === "summary" && (
+                  <motion.p
+                    key="summary"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    Your Name. is a Japanese anime film released in 2016,<br/>
+                    written and directed by Makoto Shinkai, produced by CoMix Wave Films.<br/>
+                    The story revolves around two teenagers who inexplicably swap bodies,<br/>
+                    creating a deep connection as they try to understand this supernatural phenomenon.
+                  </motion.p>
+                )}
+                {activeTab === "critics" && (
+                  <motion.p
+                    key="critics"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    Critics praised the film's animation, emotional depth, and storytelling...
+                  </motion.p>
+                )}
+                {activeTab === "snippets" && (
+                  <motion.ul
+                    key="snippets"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <li>“I’m always searching for something, someone.”</li>
+                    <li>“We’re connected by a thread of fate.”</li>
+                    <li>“I just wanted to tell you… wherever you are, I’m looking for you.”</li>
+                  </motion.ul>
+                )}
+              </AnimatePresence>
             </div>
             <nav className='summary-nav'>
               <ul>
-                <li><a href="">Summary</a></li>
-                <li><a href="">Critics</a></li>
-                <li><a href="">Snippets</a></li>
+                <li><button onClick={() => setActiveTab("summary")}>Summary</button></li>
+                <li><button onClick={() => setActiveTab("critics")}>Critics</button></li>
+                <li><button onClick={() => setActiveTab("snippets")}>Snippets</button></li>
               </ul>
             </nav>
+            {/* <div className='tab-content'>
+              {activeTab === "summary" && (
+                <p>
+                  Your Name. is a Japanese anime film released in 2016, written and directed by Makoto Shinkai. The story revolves around two teenagers who inexplicably swap bodies, creating a deep connection as they try to understand this supernatural phenomenon.
+                </p>
+              )}
+              {activeTab === "critics" && (
+                <p>
+                  Critics praised the film's animation, emotional depth, and storytelling. It holds a 98% rating on Rotten Tomatoes and was nominated for multiple international awards.
+                </p>
+              )}
+              {activeTab === "snippets" && (
+                <ul>
+                  <li>“I’m always searching for something, someone.”</li>
+                  <li>“We’re connected by a thread of fate.”</li>
+                  <li>“I just wanted to tell you… wherever you are, I’m looking for you.”</li>
+                </ul>
+              )}
+            </div> */}
            </motion.div>
         </section>
 
