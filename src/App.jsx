@@ -1,6 +1,7 @@
 import React, { useState, useEffect,  useRef  } from 'react';
 import { AiOutlineLike, AiOutlineDislike, } from "react-icons/ai";
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import bgImage  from './assets/kimi-no-na-wa.png';
 import bgPicture from './assets/character.png';
 import img1 from './assets/img/img1.jpg';
@@ -63,6 +64,12 @@ function App() {
     }, 3000);
   };
 
+  const fadeUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 1.5, ease: "easeInOut" }
+  };
+
   return (
     <div className='App'>
       {/* background */}
@@ -96,15 +103,40 @@ function App() {
       {/* conteudo principal */}
       <main className='main'>
         <section className='character'>
-          <img src={bgImage} alt="Taki and Mitsuha" />
-          <h3 className='name taki'>Taki Tachibana</h3>
-          <h3 className='name mitsuha'>Mitsuha Miyamizu</h3> 
+          <motion.img
+            src={bgImage}
+            alt="Taki and Mitsuha"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+          <motion.h3
+            className='name taki'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
+          >
+            Taki Tachibana
+          </motion.h3>
+          <motion.h3
+            className='name mitsuha'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut", delay: 0.4 }}
+          >
+            Mitsuha Miyamizu
+          </motion.h3>
         </section>
 
         {/* Seção de informaçao */}
         <section className='movie-info'>
-          <div className='movie-background'>
-              <div className='details'>
+          <motion.div
+            className='movie-background'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className='details'>
               <p>2016 • Roman/Fantasy • 1h 52min</p>
               <p>96% of people liked it</p>
             </div>
@@ -117,12 +149,18 @@ function App() {
               <button className='like' aria-label="Like"><AiOutlineLike size={24}/></button>
               <button className='dislike' aria-label="Dislike"><AiOutlineDislike size={24} /></button>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Seção de Resumo */}
         <section className='movie-summary'>
-          <div className='summary-content'>
+          <motion.div
+            className='summary-content'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
             <img src={bgPicture} alt="movie poster"/>
 
             <div className='text-block'>
@@ -138,13 +176,19 @@ function App() {
                 <li><a href="">Snippets</a></li>
               </ul>
             </nav>
-          </div>
+           </motion.div>
         </section>
 
         {/* fotos carrossel */}
         <section className='movie-carousel'>
           <h2 className='carousel-title'>Scenas</h2>
-          <div className='carousel-wrapper'>
+          <motion.div
+            className='carousel-wrapper'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
             <div className='carousel' ref={trackRef} onMouseEnter={pauseCarousel}
   onMouseLeave={resumeCarousel}>
               <div className='carousel-track' >
@@ -154,11 +198,17 @@ function App() {
                 <img src={img4} alt="Scene 4" />
               </div>
             </div> 
-          </div>
+          </motion.div>
         </section>
       </main>
 
-      <footer className='moral-section'>
+      <motion.footer
+        className='moral-section'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+      >
         <h2>Moral Story</h2>
         <blockquote>
           <p> The memory of humans is indeed limited.<br/>
@@ -168,7 +218,7 @@ function App() {
           </p>
           <cite>— Himawari, 2022</cite>
         </blockquote>
-      </footer>
+      </motion.footer>
 
     </div>
   );

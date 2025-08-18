@@ -161,7 +161,6 @@ body, html, #root {
   white-space: nowrap;
   margin: 8px 0;
   border: 1px solid rgba(255, 255, 255, 0.6);
-  animation: fade-up 1.5s ease-in-out forwards;
   z-index: 1;
 }
 
@@ -177,22 +176,10 @@ body, html, #root {
   right: 10px;
 } 
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px)
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .movie-info {
   padding: 6.5rem;
   width: 75%;
   height: auto;
-  animation: fade-up 1.5s ease-in-out forwards;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
