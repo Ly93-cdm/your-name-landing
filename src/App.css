@@ -409,7 +409,7 @@ body, html, #root {
   padding: 40px;
   text-align: center;
   border-radius: 12px;
-  margin: 40px 60px;
+  margin: 40px auto;
   max-width: 700px;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(6px);
@@ -569,38 +569,23 @@ body, html, #root {
   .carousel {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
-    position: relative;
-  }
-
-  .carousel-btn {
-    display: block;
-    background-color: radial-gradient( rgba(255, 255, 255, 0.1), transparent 70%);
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-  }
-
-  .carousel-btn.left {
-    left: 10px;
-  }
-
-  .carousel-btn.right {
-    right: 0px;
   }
 
   .carousel-track {
     display: flex;
     gap: 10px;
     min-width: max-content;
+  }
+
+  .carousel-track img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
   }
 
   .moral-section {

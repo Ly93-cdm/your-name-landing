@@ -1,4 +1,4 @@
-import React, { useState,  useRef  } from 'react';
+import React, { useState, useEffect,  useRef  } from 'react';
 import { AiOutlineLike, AiOutlineDislike, } from "react-icons/ai";
 import { FaBars, FaTimes } from 'react-icons/fa';
 import bgImage  from './assets/kimi-no-na-wa.png';
@@ -10,16 +10,30 @@ import img4 from './assets/img/img4.png';
 import './App.css'
 
 function App() {
+  // menu
+  const [open, setOpen] = useState(false); 
   const trackRef = useRef(null);
-  const [open, setOpen] = useState(false);
 
-  const scrollLeft = () => {
-    trackRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-  };
+  // carousel
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
 
-  const scrollRight = () => {
-    trackRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-  };
+    const imgs = track.querySelectorAll("img");
+    let index = 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % imgs.length;
+      const scrollX = imgs[index].offsetLeft;
+
+      track.scrollTo({
+        left: scrollX,
+        behavior: "smooth",
+      });
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className='App'>
@@ -103,7 +117,6 @@ function App() {
         <section className='movie-carousel'>
           <h2 className='carousel-title'>Scenas</h2>
           <div className='carousel-wrapper'>
-            <button className='carousel-btn left' onClick={scrollLeft}>‹</button>
             <div className='carousel' ref={trackRef}>
               <div className='carousel-track' >
                 <img src={img1} alt="Scene 1" />
@@ -112,11 +125,10 @@ function App() {
                 <img src={img4} alt="Scene 4" />
               </div>
             </div> 
-            <button className='carousel-btn right' onClick={scrollRight}>›</button>
           </div>
         </section>
-
       </main>
+
       <footer className='moral-section'>
         <h2>Moral Story</h2>
         <p> The memory of humans is indeed limited.<br/>
@@ -126,6 +138,7 @@ function App() {
           </p>
           <p class="credit">— Himawari, 2022</p>
       </footer>
+      
     </div>
   );
 }
