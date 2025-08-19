@@ -171,7 +171,9 @@ function Playlist() {
             <ul className="track-list">
                 {tracks.map((track, index) => (
                 <li key={index} className="track-item">
-                    <img src={track.cover} alt={`${track.title} cover`} />
+                    <div className="vinyl-wrapper">
+                        <img src={track.cover} alt={`${track.title} cover`}  className="vinyl"/>
+                    </div>
                     <div className="track-info">
                     <h3>{track.title}</h3>
                     <p>{track.artist}</p>
