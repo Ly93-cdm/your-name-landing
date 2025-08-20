@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { AnimatePresence, motion } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Playlist from './pages/Playlist';
+import Creator from './pages/Creator';
 import bgImage  from './assets/kimi-no-na-wa.png';
 import bgPicture from './assets/character.png';
 import img1 from './assets/img/img1.jpg';
@@ -100,7 +101,7 @@ function App() {
               <ul>
                 <li><Link to="/">Description</Link></li>
                 <li><Link to="/playlist">Playlist</Link></li>
-                <li><Link to="/">Profile</Link></li>
+                <li><Link to="/Creator">About the Creator</Link></li>
                 <li><Link to="/">Next movie</Link></li>
               </ul>
             </nav>
@@ -272,6 +273,7 @@ function App() {
           }
         />
           <Route path="/playlist" element={<Playlist />} />
+          <Route path="/creator" element={<Creator />} />
         </Routes>
       </div>
     </Router>
