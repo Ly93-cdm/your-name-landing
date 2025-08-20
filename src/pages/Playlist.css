@@ -46,16 +46,10 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    animation: spin 6s linear infinite;
+    animation: transform 0.5s ease;
 }
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.track-item:hover .vinyl {
+  animation: spin 6s linear infinite;
 }
 
 .vinyl-wrapper::after {
@@ -70,6 +64,16 @@
     transform: translate(-50%, -50%);
     z-index: 2;
 }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 
 .track-info h3 {
   margin: 0;
@@ -95,4 +99,38 @@
 .track-info a:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(29, 185, 84, 0.6);
+}
+
+.playlist-footer {
+  width: 100%;
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.playlist-footer:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.playlist-footer p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  font-family: 'Times New Roman', serif;
+  color: #ddd;
+}
+
+.playlist-footer a {
+  color: #80bfff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.playlist-footer a:hover {
+  text-decoration: underline;
 }

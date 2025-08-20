@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from 'framer-motion';
 import './Playlist.css';
 
 const albumCover = "https://i.scdn.co/image/ab67616d0000b2733d1869d8c477d291a205a2d6";
@@ -170,7 +171,14 @@ function Playlist() {
 
             <ul className="track-list">
                 {tracks.map((track, index) => (
-                <li key={index} className="track-item">
+                <motion.li
+                  key={index}
+                  className="track-item"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                >
                     <div className="vinyl-wrapper">
                         <img src={track.cover} alt={`${track.title} cover`}  className="vinyl"/>
                     </div>
@@ -179,9 +187,22 @@ function Playlist() {
                     <p>{track.artist}</p>
                     <a href={track.link} target="_blank" rel="noopener noreferrer">Ouvir no Spotify</a>
                     </div>
-                </li>
+                </motion.li>
                 ))}
             </ul>
+            <motion.section
+              className="playlist-footer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+            >
+                <p> 
+                  🎵 Playlist project by Ly. Album cover sourced directly from Spotify CDN.</p>
+                <p>
+                  Design inspiration from <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer">Dribbble</a> and <a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS-Tricks</a>.
+                </p>
+            </motion.section>
         </div>
     );
 }
