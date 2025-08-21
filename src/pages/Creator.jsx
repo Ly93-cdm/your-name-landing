@@ -1,29 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import creatorpng  from '../assets/creator.png';
 import './Creator.css';
 
 
 function Creator() {
     return (
-      <main className="profile-page">
-        <motion.section
-            className="creator-header"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-        >
-            <h1>Profile</h1>
-            <h2>Makoto Shinkai</h2>
-            <p>Visionary filmmaker behind *Your Name*, *Weathering With You*, and *Suzume*</p>
-        </motion.section>
+      <main className="creator-page">
+        <section className='creator-character'>
+            <motion.img
+                src={creatorpng}
+                alt='Makoto Shinkau'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0}}
+                transition={{ duration: 1.5, ease:  "easeInOut" }}
+            />
 
-        <motion.section
-            className="creator-bio"
+            <motion.h3 
+                className='creator-name left'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0}}
+                transition={{ duration: 1.5, ease:  "easeInOut", delay: 0.2}}
+            >
+                Makoto Shinkai
+            </motion.h3>
+
+            <motion.h3
+                className='creator-role right'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0}}
+                transition={{ duration: 1.5, ease:  "easeInOut", delay: 0.2 }}    
+            >
+                Director & Storyteller
+            </motion.h3>
+        </section>
+
+        <motion.section 
+            className='creator-biography'
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            animate={{ opacity: 1, y: 0}}
+            transition={{ duration: 1.5, ease:  "easeInOut" }}    
         >
             <h3>Biography</h3>
             <p>
@@ -31,27 +47,26 @@ function Creator() {
             His works are known for poetic storytelling, breathtaking visuals, and emotional depth.
             </p>
             <p>
-            Shinkai’s films often explore themes of distance, longing, and fate. His trilogy — *Your Name*, *Weathering With You*, and *Suzume* — are among the highest-grossing Japanese films of all time.
+            Shinkai’s films often explore themes of distance, longing, and fate. His trilogy — <em>Your Name</em>, <em>Weathering With You</em>, and <em>Suzume</em> — are among the highest-grossing Japanese films of all time.
             </p>
         </motion.section>
 
         <motion.section
-            className="creator-inspiration"
+            className='creator-inspiration'
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            animate={{ opacity: 1, y: 0}}
+            transition={{ duration: 1.5, ease:  "easeInOut" }}
         >
-        <h3>Creative Inspiration</h3>
-        <p>
-          Shinkai has cited influences like *Dracula* and *Laputa: Castle in the Sky*, blending gothic longing with sky-filled wonder.
-          His early work, *Voices of a Distant Star*, set the tone for his signature style: bittersweet distance, emotional resonance, and visual poetry.
-        </p>
-        <blockquote>
-          <p>“Waiting for a message from someone you love, not knowing when or if it will come — that’s something that still hurts today.”</p>
-          <cite>— Makoto Shinkai</cite>
-        </blockquote>
-      </motion.section>
+            <h3>Creative Inspiration</h3>
+            <p>
+            Shinkai has cited influences like <em>Dracula</em> and <em>Laputa: Castle in the Sky</em>, blending gothic longing with sky-filled wonder.
+            His early work, <em>Voices of a Distant Star</em>, set the tone for his signature style: bittersweet distance, emotional resonance, and visual poetry.
+            </p>
+            <blockquote>
+            <p>“Waiting for a message from someone you love, not knowing when or if it will come — that’s something that still hurts today.”</p>
+            <cite>— Makoto Shinkai</cite>
+            </blockquote>
+        </motion.section>
     </main>  
     );
 }

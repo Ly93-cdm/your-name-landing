@@ -1,49 +1,76 @@
-.profile-page {
-  padding: 40px;
-  max-width: 800px;
+.creator-character {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   margin: 0 auto;
-  color: #ddd;
-}
-
-.creator-header,
-.creator-bio,
-.creator-inspiration {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
-  padding: 40px;
-  margin-bottom: 40px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.creator-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  font-family: Georgia, serif;
+.creator-character img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
 }
 
-.creator-header h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
+.creator-name,
+.creator-role {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: white;
+  padding: 8px 16px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: -1;
 }
 
-.creator-bio h3,
+.creator-name.left {
+  border-radius: 999px 0 0 999px;
+  padding: 8px 160px 8px 16px;
+  right: 250px;
+}
+
+.creator-role.right {
+  border-radius: 0 999px 999px 0;
+  padding: 8px 16px 8px 160px;
+  left: 240px;
+}
+
+.creator-biography, 
+.creator-inspiration {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;;
+}
+
+.creator-biography h3, 
 .creator-inspiration h3 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
 }
 
-.creator-bio p,
+.creator-biography p,
 .creator-inspiration p {
-  font-size: 1.2em;
+  font-size: 1rem;
   line-height: 1.6;
-  font-family: 'Times New Roman', serif;
+  margin-bottom: 16px;
 }
 
 blockquote {
-  margin-top: 20px;
+  margin: 20px 0;
+  padding-left: 20px;
+  border-left: 3px solid rgba(255, 255, 255, 0.8);
   font-style: italic;
-  color: #aaa;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
 }
