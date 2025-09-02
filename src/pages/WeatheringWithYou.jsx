@@ -7,10 +7,10 @@ function WeatheringWithYou() {
     return (
         <main className="wwy-container">
             <motion.section
-                className="wwy-header"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
+                    className="wwy-header"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
                 >
                 <h1 className="wwy-title"> 
                     WEATHERING <span className="wwy-subtitle">WITH YOU</span>
@@ -19,10 +19,10 @@ function WeatheringWithYou() {
             </motion.section>
 
             <motion.section 
-            className="wwy-poster-info"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+                className="wwy-poster-info"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
             >
                 <img src="src/assets/img/posterWWY.jpg" alt="Weathering With You Poster" className="wwy-poster"/>
                 <div className="wwy-description">
@@ -37,11 +37,11 @@ function WeatheringWithYou() {
             </motion.section>
 
             <motion.section 
-            className="wwy-carousel"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+                className="wwy-carousel"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
             >
                 <h2 className='wwy-carousel-title'>Scenas</h2>
                 <div className="wwl-carousel-wrapper">
@@ -58,11 +58,11 @@ function WeatheringWithYou() {
             </motion.section>
 
             <motion.section 
-            className="wwy-quote"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2 }}
+                className="wwy-quote"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2 }}
             >
                 <blockquote>
                     <p>
@@ -71,6 +71,7 @@ function WeatheringWithYou() {
                     </p>
                 </blockquote>
             </motion.section>
+            
             <motion.section className="wwy-characters">
                 <img src="src/assets/img/hodaka.jpg" alt="Hodaka" />
                 <img src="src/assets/img/hina.jpg" alt="Hina" />
