@@ -1,1 +1,131 @@
+.wwy-container {
+    color: white;
+    font-family:  'Segoe UI', sans-serif;
+    min-width: 100vh;
+    padding-bottom: 40px;
+}
 
+.wwy-header {
+    text-align: start;
+    padding: 40px 300px 20px;
+}
+
+.wwy-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #a0c4ff;
+}
+
+.wwy-info {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.wwy-poster-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.wwy-poster {
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.wwy-description {
+    max-width: 600px;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.wwy-carousel {
+    width: 1300px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.wwl-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.wwl-carousel {
+    display: flex;
+    gap: 10px;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.wwl-carousel img {
+    width: 280px;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transform: transform 0.3s ease;
+}
+
+.wwl-carousel img:hover {
+    transform: scale(1.08);
+} 
+
+.wwy-quote {
+    width: 100%;
+    height: auto;
+    margin-top: 4rem;;
+    padding: 40px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px)
+}
+
+.wwl-quote p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-family: 'Times New Roman', serif;
+}
+
+.wwy-characters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.wwy-characters img {
+    width: 100px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.wwy-characters img:hover {
+    transform: scale(1.1);
+}
