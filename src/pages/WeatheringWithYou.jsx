@@ -44,8 +44,8 @@ function WeatheringWithYou() {
                 transition={{ duration: 1.5, ease: "easeInOut" }}
             >
                 <h2 className='wwy-carousel-title'>Scenas</h2>
-                <div className="wwl-carousel-wrapper">
-                    <div className="wwl-carousel wwl-carousel-track">
+                <div className="wwy-carousel-wrapper">
+                    <div className="wwy-carousel-track">
                         {[...Array(9)].map((_, i) => (
                         <img
                             key={i}

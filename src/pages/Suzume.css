@@ -104,3 +104,66 @@
     line-height: 1.6;
     font-family: 'Times New Roman', serif;
 }
+
+
+@media (max-width: 768px) {
+    .suzume-page {
+        padding: 20px;
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .s-container {
+        padding: 20px;
+        min-width: 100%;
+    }
+
+    .s-header {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .s-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .s-info {
+        font-size: 0.8rem;
+    }
+
+    .s-poster-info {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .s-poster {
+        width: 140px;
+    }
+
+    .s-description {
+        max-width: 100%;
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .s-carousel-track {
+        width: 100%;
+        padding: 0;
+    }
+
+    .s-carousel-track img {
+        width: 200px;
+    }
+
+    .s-quote {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .s-quote p {
+        font-size: 1rem;
+    }   
+}
