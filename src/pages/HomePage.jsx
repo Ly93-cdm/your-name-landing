@@ -10,9 +10,7 @@ import img2 from '../assets/img/img2.jpg';
 import img3 from '../assets/img/img3.jpg';
 import img4 from '../assets/img/img4.png';
 
-
-
-import {fadeUp} from '../utils/animations';
+import { fadeUp, defaultTransition, withDelay } from '../utils/animations';
 import './HomePage.css';
 
 function HomePage() {
@@ -48,11 +46,6 @@ function HomePage() {
         startCarousel();
         return () => clearInterval(intervalRef.current);
     }, [startCarousel]);
-
-
-    const defaultTransition = { duration: 1.5, ease: "easeInOut" };
-    const withDelay = (delay) => ({ ...defaultTransition, delay });
-
 
     return (
     <main className='main'>
