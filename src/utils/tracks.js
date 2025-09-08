@@ -1,5 +1,6 @@
+const albumCover = "https://i.scdn.co/image/ab67616d0000b2733d1869d8c477d291a205a2d6";
 
-const tracks = [
+export const tracks = [
     {
         title: "Dream lantern",
         artist: "RADWIMPS",

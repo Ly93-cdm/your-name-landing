@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import creatorpng from "../assets/creator.png";
-import { defaultTransition, withDelay } from "../utils/animation";
+import { defaultTransition, withDelay } from "../utils/animations";
 
 function CreatorHeader() {
     return (

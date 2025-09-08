@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { defaultTransition } from '../utils/motionConfig';
+import { defaultTransition } from '../utils/animations';
 
 function CreatorBiography() {
      return (

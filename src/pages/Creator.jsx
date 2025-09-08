@@ -6,13 +6,13 @@ import './Creator.css';
 
 
 function Creator() {
-    return (
-      <main className="creator-page">
-        <CreatorHeader />
-        <CreatorBiography />
-        <CreatorInspiration />
+  return (
+    <main className="creator-page">
+      <CreatorHeader />
+      <CreatorBiography />
+      <CreatorInspiration />
     </main>  
-    );
+  );
 }
 
 export default Creator;
