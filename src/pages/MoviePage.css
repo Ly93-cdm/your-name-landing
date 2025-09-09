@@ -1,67 +1,128 @@
-.suzume-page {
+.movie-page {
     color: white;
-    font-family:  'Segoe UI', sans-serif;
-    min-width: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-bottom: 40px;
 }
 
-.s-header {
+.movie-header {
     text-align: start;
-    padding: 40px 300px 20px;
+    padding: 40px 0 20px;
 }
 
-.s-title {
-    font-size: 3rem;
+.movie-header h1 {
+    font-size: 5rem;
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 
-.s-info {
+.movie-header .subtitle {
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #a0c4ff;
+}
+
+.movie-header p,
+.movie-info {
     font-size: 0.9rem;
     margin-top: 10px;
     opacity: 0.9;
 }
 
-.s-poster-info {
+.movie-poster-info {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
     padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.s-poster {
+.movie-poster-info img {
     width: 180px;
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
 }
 
-.s-description {
+.movie-description {
     max-width: 600px;
     text-align: left;
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-.s-carousel {
+.movie-carousel {
     width: 1300px;
     padding: 0 10px;
     margin: 0 auto;
 }
 
-.s-carousel-wrapper {
+.movie-carousel-wrapper {
     position: relative;
     width: 100%;
     height: 250px;
     overflow: hidden;
-    position: relative;
 }
 
-.s-carousel-track {
+.movie-carousel-track {
     display: flex;
     gap: 10px;
     animation: scroll 20s linear infinite;
+}
+
+.movie-carousel-track img {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.movie-carousel-track img:hover {
+    transform: scale(1.08);
+}
+
+.movie-quote {
+    width: 100%;
+    height: auto;
+    margin-top: 4rem;
+    padding: 40px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px);
+}
+
+.movie-quote p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-family: 'Times New Roman', serif;
+}
+
+.movie-characters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.movie-characters img {
+    width: 100px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.movie-characters img:hover {
+    transform: scale(1.1);
 }
 
 @keyframes scroll {
@@ -73,97 +134,73 @@
     }
 }
 
-.s-carousel-track img {
-    width: 280px;
-    height: 180px;
-    object-fit: cover;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-}
-
-.s-carousel-track img:hover {
-    transform: scale(1.08);
-} 
-
-.s-quote {
-    width: 100%;
-    height: auto;
-    margin-top: 4rem;;
-    padding: 40px;
-    text-align: center;
-    border-radius: 12px;
-    margin: 40px auto;
-    max-width: 700px;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(6px)
-}
-
-.s-quote p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    font-family: 'Times New Roman', serif;
-}
-
-
 @media (max-width: 768px) {
-    .suzume-page {
+    .movie-page {
         padding: 20px;
         min-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .s-container {
-        padding: 20px;
-        min-width: 100%;
-    }
 
-    .s-header {
+    .movie-header {
         padding: 20px;
         text-align: center;
     }
 
-    .s-title {
+    .movie-header h1 {
         font-size: 2rem;
         letter-spacing: 2px;
     }
 
-    .s-info {
+    .movie-header .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .movie-info {
         font-size: 0.8rem;
     }
 
-    .s-poster-info {
+    .movie-poster-info {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
 
-    .s-poster {
+    .movie-poster-info img {
         width: 140px;
     }
 
-    .s-description {
+    .movie-description {
         max-width: 100%;
         font-size: 0.9rem;
         padding: 0 10px;
     }
 
-    .s-carousel-track {
+    .movie-carousel-track {
         width: 100%;
         padding: 0;
     }
 
-    .s-carousel-track img {
+    .movie-carousel-track img {
         width: 200px;
     }
 
-    .s-quote {
+    .movie-quote {
         padding: 20px;
         margin: 20px auto;
     }
 
-    .s-quote p {
+    .movie-quote p {
         font-size: 1rem;
-    }   
+    }
+
+    .movie-characters {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .movie-characters img {
+        width: 80px;
+    }
 }

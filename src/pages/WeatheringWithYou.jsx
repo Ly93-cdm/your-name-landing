@@ -4,7 +4,7 @@ import MoviePosterInfo from "../components/MoviePosterInfo";
 import MovieCarousel from "../components/MovieCaroussel";
 import MovieQuote from "../components/MovieQuote";
 // import MovieCharacters from "../components/MovieCharacters";
-import "./WeatheringWithYou.css";
+import "./MoviePage.css";
 import posterWWY from '../assets/img/posterWWY.jpg';
 
 
@@ -20,12 +20,12 @@ function WeatheringWithYou() {
     //     "src/assets/img/mami.jpg"
     // ];
     return (
-        <main className="wwy-container">
+        <main className="movie-page">
             <MovieHeader
                 title="Weathering"
                 subtitle="With You"
                 info="2019 | Shoujo | 1h51min | Anime | Language: Japanese"
-                className="wwy-header"
+                className="movie-header"
             />
             <MoviePosterInfo
                 posterSrc={posterWWY}
@@ -33,10 +33,10 @@ function WeatheringWithYou() {
                 writer="Makoto Shinkai"
                 cast="Kotaro Daigo, Nano Mori"
                 description="On a day of extreme rain, high school student Hodaka Morishima runs away from his troubled rural home to Tokyo and befriends an orphan girl who has the power to manipulate the weather."
-                className="wwy-poster-info"
+                className="movie-poster-info"
             />
-            <MovieCarousel images={carouselImages} title="Scenas" className="wwy-carousel" />
-            <MovieQuote quote="Who cares if we never see the sun shine again? I want you more than any blue sky. Time can go crazy." className="wwy-quote" />
+            <MovieCarousel images={carouselImages} title="Scenas" className="movie-carousel" />
+            <MovieQuote quote="Who cares if we never see the sun shine again? I want you more than any blue sky. Time can go crazy." className="movie-quote" />
             {/* <MovieCharacters images={characterImages} className="wwy-characters" /> */}
         </main>
     );

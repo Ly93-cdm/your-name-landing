@@ -1,78 +1,33 @@
 import React from "react";
-import "./Suzume.css";
-import { motion } from "framer-motion";
+import MovieHeader from "../components/MovieHeader";
+import MoviePosterInfo from "../components/MoviePosterInfo";
+import MovieCarousel from "../components/MovieCaroussel";
+import MovieQuote from "../components/MovieQuote";
+import "./MoviePage.css";
+
 
 function Suzume() {
-    return (
-        <main className="suzume-page">
-            <motion.section
-                className="s-header"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                >
-                <h1 className="s-title"> 
-                    Suzume
-                    <p className="s-info">2022 | Shoujo | 2h02min | Anime | Language: Japanese</p>
-                </h1>
-            </motion.section>
+   const carouselImages = [...Array(9)].map((_, i) => `src/assets/img/frame${i + 1}.jpg`);
 
-            <motion.section 
-                className="s-poster-info"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-            >
-                <img src="src/assets/img/posterS.jpg" alt="Suzume" className="s-poster"/>
-                <div className="s-description">
-                    <p>Write by Makoto Shinkai</p>
-                    <p>Cast: Nanoka Hara, Hokuto Matsumura</p>
-                    <p>
-                        A 17-year-old girl named Suzume discovers a mysterious door in the mountains, and <br />
-                        soon others begin to appear throughout Japan. When opened, they bring disaster <br />
-                        and destruction, and only Suzume can close them again.
-                    </p>
-                </div>
-            </motion.section>
-
-            <motion.section 
-                className="s-carousel"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-            >
-                <h2 className='s-carousel-title'>Scenas</h2>
-                <div className="s-carousel-wrapper">
-                    <div className=" s-carousel-track">
-                        {[...Array(9)].map((_, i) => (
-                        <img
-                            key={i}
-                            src={`src/assets/img/frame${i + 1}.jpg`}
-                            alt={`scene ${i + 1}`}
-                        />
-                        ))}
-                    </div>
-                </div>
-            </motion.section>
-
-            <motion.section 
-                className="s-quote"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2 }}
-            >
-                <blockquote>
-                    <p>
-                        “The future is not that scary. The night might seem endless now. But, morning will come.”
-                    </p>
-                </blockquote>
-            </motion.section>
-
-
+   return (
+        <main className="movie-page">
+        <MovieHeader
+            title="Suzume"
+            info="2022 | Shoujo | 2h02min | Anime | Language: Japanese"
+            className="movie-header"
+        />
+        <MoviePosterInfo
+            posterSrc="src/assets/img/posterS.jpg"
+            alt="Suzume Poster"
+            writer="Makoto Shinkai"
+            cast="Nanoka Hara, Hokuto Matsumura"
+            description="A 17-year-old girl named Suzume discovers a mysterious door in the mountains, and soon others begin to appear throughout Japan. When opened, they bring disaster and destruction, and only Suzume can close them again."
+            className="movie-poster-info"
+        />
+        <MovieCarousel images={carouselImages} title="Scenas" className="movie-carousel" />
+        <MovieQuote quote="The future is not that scary. The night might seem endless now. But, morning will come." className="movie-quote" />
         </main>
-    );
+   );
 }
 
 export default Suzume;
