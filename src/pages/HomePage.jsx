@@ -113,10 +113,10 @@ function HomePage() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.5 }}
                     >
-                    Your Name. é um filme de anime japonês de 2016,<br />
-                    escrito e dirigido por Makoto Shinkai, produzido pela CoMix Wave Films.<br />
-                    A história gira em torno de dois adolescentes que inexplicavelmente trocam de corpo,<br />
-                    criando uma conexão profunda enquanto tentam entender esse fenômeno sobrenatural.
+                    Your Name. is a 2016 Japanese anime film,<br />
+                    written and directed by Makoto Shinkai, and produced by CoMix Wave Films.<br />
+                    The story follows two teenagers who inexplicably switch bodies,<br />
+                    forming a deep connection as they try to understand this supernatural phenomenon.
                     </motion.p>
                 )}
                 {activeTab === "critics" && (
@@ -126,7 +126,7 @@ function HomePage() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.5 }}
                     >
-                    Críticos elogiaram a animação, profundidade emocional e narrativa envolvente...
+                    Critics praised the animation, emotional depth, and engaging storytelling...
                     </motion.p>
                 )}
                 {activeTab === "snippets" && (
@@ -136,18 +136,18 @@ function HomePage() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.5 }}
                     >
-                    <li>“Estou sempre procurando por algo, alguém.”</li>
-                    <li>“Estamos conectados por um fio do destino.”</li>
-                    <li>“Só queria te dizer... onde quer que você esteja, estou procurando por você.”</li>
+                        <li>“I'm always searching for something... someone.”</li>
+                        <li>“We are connected by a thread of fate.”</li>
+                        <li>“I just wanted to tell you... wherever you are, I'm looking for you.”</li>
                     </motion.ul>
                 )}
                 </AnimatePresence>
             </div>
             <nav className='summary-nav'>
                 <ul>
-                <li><button onClick={() => setActiveTab("summary")}>Resumo</button></li>
-                <li><button onClick={() => setActiveTab("critics")}>Críticas</button></li>
-                <li><button onClick={() => setActiveTab("snippets")}>Frases</button></li>
+                <li><button onClick={() => setActiveTab("summary")}>Summary</button></li>
+                <li><button onClick={() => setActiveTab("critics")}>Critics</button></li>
+                <li><button onClick={() => setActiveTab("snippets")}>Snippets</button></li>
                 </ul>
             </nav>
             </motion.div>
@@ -167,10 +167,10 @@ function HomePage() {
             <h2>Mensagem Final</h2>
             <blockquote>
                 <p>
-                    A memória humana é limitada.<br />
-                    Mas o que está gravado no coração nunca será apagado pelo tempo.<br />
-                    Não importa quanto tempo passe, quão longe estejam ou quão complexa seja a história.<br />
-                    A sinceridade sempre encontra um caminho de volta.
+                    Human memory is limited.<br />
+                    But what’s engraved in the heart will never be erased by time.<br />
+                    No matter how much time passes, how far apart they are, or how complex the story becomes<br />
+                    sincerity always finds its way back.
                 </p>
                 <cite>— Himawari, 2022</cite>
             </blockquote>
